@@ -3,51 +3,39 @@
     
 }
 
-body {
+#main {
     display: flex;
     flex-direction: column;
     font-size: 1em;
     padding: 20px;
     width: auto;
-    margin: 50px;
+    margin: 25%;
     
 }
 
-header div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
-    text-align: center;
-    flex-wrap: wrap;
-
+.hidden{
+    display: none; 
 }
 
 #instructions {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 50px;
+    font-size: 1.5em;
 }
 
-
-#quiz {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+#instructions header {
+    padding: 30px;
+    /* flex-direction: row;
     justify-content: center;
-}
+    align-items: center; */
+    font-size: 3em;
+    text-align: center;
+    /* flex-wrap: wrap; */
 
-.pages {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
-    flex-wrap: wrap;
 }
 
 .questions {
@@ -85,10 +73,15 @@ button {
     display: block;
     text-align: left;
     font-size: 1.5em;
+    padding: 60px;
+    margin: 60px;
 }
 
 #highScores {
     display: block;
     text-align: left;
     font-size: 1.5em;
+    padding: 60px;
+    margin: 60px;
 }
+

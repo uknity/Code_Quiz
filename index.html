@@ -10,137 +10,42 @@
 </head>
 
 <body>
-    <header>
-    <div>Coding Quiz Challenge</div>
-    </header>
+    
 
-    <main>
+    <main id="main">
 
-        <container id="instructions">
+        <section id="instructions" class="hidden">
+            <header>Coding Quiz Challenge</header><br>
             <div>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
-                answers will penalize your scoretime by ten seconds.
+            answers will penalize your scoretime by ten seconds.
             </div>
-            <button type="button">Start Quiz"></button>
+            <button type="button" id="start">Start Quiz</button>
             <div>
-        </container>
+            </section>
 
-        <container id="quiz">
+            <section id="questions-screen">This is where the questions will go</section>
+    
 
-            <container class="pages" id="question1">
-                <section class="questions">
-                    Commonly used data types DO NOT include:
-                </section>
+            <!-- <section class="pages" id="question1"></section>
+                <div class="questions"></div>
 
-                <section class="multipleChoiceButtons">
+                
 
-                    <div><button type="button">1. Strings</button></div>
-                    <div><button type="button">2. Booleans</button></div>
-                    <div><button type="button">3. Alerts</button></div>
-                    <div><button type="button">4. Numbers</button></div>
-                    <div>
-                </section>
-
-                <section class="message">
-                    <div class="correct">Correct!</div>
-                    <div class="wrong">Wrong</div>
-                </section>
-            </container>
-
-            <container class="pages" id="question2">
-                <section class="questions">
-                    The condition in an if / else statement is enclosed within _____.
-                </section>
-
-                <section class="multipleChoiceButtons">
-
-                    <div><button type="button">1. quotes</button></div>
-                    <div><button type="button">2. curly brackets</button></div>
-                    <div><button type="button">3. parenthesis</button></div>
-                    <div><button type="button">4. square brackets</button></div>
-                    <div>
-                </section>
-
-                <section class="message">
-                    <div class="correct">Correct!</div>
-                    <div class="wrong">Wrong</div>
-                </section>
-            </container>
-
-            <container class="pages" id="question3">
-                <section class="questions">
-                    Arrays in JavaScript can be used to store ____.
-                </section>
-
-                <section class="multipleChoiceButtons">
-
-                    <div><button type="button">1. numbers and strings</button></div>
-                    <div><button type="button">2. other arrays</button></div>
-                    <div><button type="button">3. booleans</button></div>
-                    <div><button type="button">4. all of the above</button></div>
-                    <div>
-                </section>
-
-                <section class="message">
-                    <div class="correct">Correct!</div>
-                    <div class="wrong">Wrong</div>
-                </section>
-            </container>
-
-            <container class="pages" id="question4">
-                <section class="questions">
-                    String values must be enclosed within ____ when being assigned to variables.
-                </section>
-
-                <section class="multipleChoiceButtons">
-
-                    <div><button type="button">1. commas</button></div>
-                    <div><button type="button">2. curly brackets</button></div>
-                    <div><button type="button">3. quotes</button></div>
-                    <div><button type="button">4. parenthesis</button></div>
-                    <div>
-                </section>
-
-                <section class="message">
-                    <div class="correct">Correct!</div>
-                    <div class="wrong">Wrong</div>
-                </section>
-            </container>
-
-            <container class="pages" id="question5">
-                <section class="questions">
-                    A very useful tool used during development and debugging for printing content to the debugger is:
-                </section>
-
-                <section class="multipleChoiceButtons">
-
-                    <div><button type="button">1. JavaScript</button></div>
-                    <div><button type="button">2. terminal / bash</button></div>
-                    <div><button type="button">3. for loops</button></div>
-                    <div><button type="button">4. console log</button></div>
-                    <div>
-                </section>
-
-                <section class="message">
-                    <div class="correct">Correct!</div>
-                    <div class="wrong">Wrong</div>
-                </section>
-            </container>
-        </container>
-
-        <container class="pages" id="finalScorePage">
+        <section class="pages" id="finalScorePage">
             <h2>All done!</h2>
-            <div>Your final score is  <output type="text" id="finalScore"></output></div>
+            <div>Your final score is  <textarea readonly id="finalScoreOutput" placeholder="Your final score"></textarea>
+            </div>
             <span>Enter initials:</span>
             <input type="text" id="initials"><button type="submit">Submit!</button>
 
-        </container>
+        </section>
 
-        <container class="pages" id="highScores">
+        <section class="pages" id="highScores">
             <h2>Highscores</h2>
             <div>id="highScoresInitials</div>
-            <button>Go Back</button><button>Clear Highscores</button>
+            <button>Go Back</button><button>Clear Highscores</button> -->
 
-        </container>
+        <!-- </section> -->
 
     </main>
     <script src="assets/javascript/script.js"></script>
