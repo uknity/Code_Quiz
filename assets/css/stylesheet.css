@@ -13,7 +13,7 @@
     
 }
 
-.hidden{
+.hidden {
     display: none; 
 }
 
@@ -27,21 +27,32 @@
     font-size: 1.5em;
 }
 
-#instructions header {
+/* #instructions header {
     padding: 30px;
     /* flex-direction: row;
     justify-content: center;
     align-items: center; */
-    font-size: 3em;
-    text-align: center;
+    /* font-size: 3em;
+    text-align: center; */
     /* flex-wrap: wrap; */
 
-}
+/* }  */
 
-.questions {
+#questions-section {
     font-size: 1.5em;
     text-align: left;
     padding: 40px;
+}
+
+#ques {
+    display: block;
+    font-size: 1.5em;
+    }
+
+#ans {
+    display: block;
+    font-size: 1em;
+    
 }
 
 .multipleChoiceButtons {
@@ -69,7 +80,7 @@ button {
 
 }
 
-#finalScorePage {
+.finalScorePage {
     display: block;
     text-align: left;
     font-size: 1.5em;
@@ -77,7 +88,7 @@ button {
     margin: 60px;
 }
 
-#highScores {
+.highScores {
     display: block;
     text-align: left;
     font-size: 1.5em;

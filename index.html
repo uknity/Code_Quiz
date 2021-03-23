@@ -14,38 +14,33 @@
 
     <main id="main">
 
-        <section id="instructions" class="hidden">
-            <header>Coding Quiz Challenge</header><br>
-            <div>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
-            answers will penalize your scoretime by ten seconds.
-            </div>
-            <button type="button" id="start">Start Quiz</button>
-            <div>
-            </section>
+        <section class="instructions">
+                <h1>Coding Quiz Challenge</h1>
+                <div>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds.</div>
+                <button type="button" id="start">Start Quiz</button>
+        </section>
 
-            <section id="questions-screen">This is where the questions will go</section>
+        <section class="hidden" id="questions-section" >
+            <div id="ques"></div>
+            <div id="ans"></div>
+            <div id="message"></div>       
+        </section>
     
-
-            <!-- <section class="pages" id="question1"></section>
-                <div class="questions"></div>
-
-                
-
-        <section class="pages" id="finalScorePage">
+        <section class="hidden"  class="pages" class="finalScorePage">
             <h2>All done!</h2>
-            <div>Your final score is  <textarea readonly id="finalScoreOutput" placeholder="Your final score"></textarea>
+            <div>Your final score is  <textarea readonly class="finalScoreOutput" placeholder="Your final score"></textarea>
             </div>
             <span>Enter initials:</span>
-            <input type="text" id="initials"><button type="submit">Submit!</button>
+            <input type="text" class="initials"><button type="submit">Submit!</button>
 
         </section>
 
-        <section class="pages" id="highScores">
-            <h2>Highscores</h2>
-            <div>id="highScoresInitials</div>
-            <button>Go Back</button><button>Clear Highscores</button> -->
+        <section class="hidden" class= "highScores">
+            <div>High Scores</div>
+            <div class="highScoresInitials"></div>
+            <button>Go Back</button><button>Clear Highscores</button>
 
-        <!-- </section> -->
+        </section>
 
     </main>
     <script src="assets/javascript/script.js"></script>
