@@ -30,16 +30,19 @@
     
         <section class="hidden"  id="finalScorePage">
             <h2>All done!</h2>
-            <div>Your final score is  <textarea readonly class="finalScoreOutput" placeholder="Your final score"></textarea>
+            <div id="finalScore">Your final score is 
             </div>
             <span>Enter initials:</span>
-            <input type="text" class="initials"><button type="submit">Submit!</button>
+            <input type="text" id="initials"><button type="submit" id="submit">Submit!</button>
 
         </section>
 
-        <section class="hidden" id="highScores">
+        <section class="hidden"  id="highScores">
             <div>High Scores</div>
-            <div class="highScoresInitials"></div>
+            <div id="highScoresInitials"></div>
+            <ul id="listOfHighScores">
+                
+            </ul>
             <button>Go Back</button><button>Clear Highscores</button>
 
         </section>
