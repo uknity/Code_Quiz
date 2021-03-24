@@ -17,6 +17,20 @@
     display: none; 
 }
 
+.timer {
+    width: 150px;
+    height: 40px;
+    background-color: cornflowerblue;
+    border-radius: 10%;
+}
+
+#timerOutput {
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10%;
+
+}
 #instructions {
     display: flex;
     flex-direction: column;
@@ -96,3 +110,10 @@ button {
     margin: 60px;
 }
 
+.youLose {
+    display: block;
+    text-align: left;
+    font-size: 1.5em;
+    padding: 60px;
+    margin: 60px; 
+}

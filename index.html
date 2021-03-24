@@ -10,10 +10,12 @@
 </head>
 
 <body>
-    
+    <header>
+        <div class="timer">Timer: <span id="timerOutput"></span></div>
+    </header>
 
     <main id="main">
-
+        
         <section class="instructions">
                 <h1>Coding Quiz Challenge</h1>
                 <div>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds.</div>
@@ -26,7 +28,7 @@
             <div id="message"></div>       
         </section>
     
-        <section class="hidden"  class="pages" class="finalScorePage">
+        <section class="hidden"  id="finalScorePage">
             <h2>All done!</h2>
             <div>Your final score is  <textarea readonly class="finalScoreOutput" placeholder="Your final score"></textarea>
             </div>
@@ -35,13 +37,14 @@
 
         </section>
 
-        <section class="hidden" class= "highScores">
+        <section class="hidden" id="highScores">
             <div>High Scores</div>
             <div class="highScoresInitials"></div>
             <button>Go Back</button><button>Clear Highscores</button>
 
         </section>
 
+       
     </main>
     <script src="assets/javascript/script.js"></script>
 </body>
