@@ -37,20 +37,9 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 20px;
     font-size: 1.5em;
 }
-
-/* #instructions header {
-    padding: 30px;
-    /* flex-direction: row;
-    justify-content: center;
-    align-items: center; */
-    /* font-size: 3em;
-    text-align: center; */
-    /* flex-wrap: wrap; */
-
-/* }  */
 
 #questions-section {
     font-size: 1.5em;
@@ -116,4 +105,17 @@ button {
     font-size: 1.5em;
     padding: 60px;
     margin: 60px; 
+}
+
+#listOfHighScores {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 7%;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+#subHead {
+    font-size: 30px;
 }

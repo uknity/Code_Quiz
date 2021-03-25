@@ -31,15 +31,13 @@ var listOfHighScoresEl = document.getElementById("listOfHighScores");
 
 
 
-var questions = [
-  {
+var questions = [{
     question: "Commonly used data types DO NOT include:",
     answerChoices: ["strings", "booleans", "alerts", "numbers"],
     correctAnswer: "alerts",
   },
   {
-    question:
-      "The condition in an if / else statement is enclosed within _____.",
+    question: "The condition in an if / else statement is enclosed within _____.",
     answerChoices: [
       "quotes",
       "curly brackets",
@@ -59,14 +57,12 @@ var questions = [
     correctAnswer: "all of the above",
   },
   {
-    question:
-      "String values must be enclosed within ____ when being assigned to variables.",
+    question: "String values must be enclosed within ____ when being assigned to variables.",
     answerChoices: ["commas", "curly brackets", "quotes", "parenthesis"],
     correctAnswer: "quotes",
   },
   {
-    question:
-      "A very useful tool used during development and debugging for printing content to the debugger is:",
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
     answerChoices: [
       "JavaScript",
       "terminal / bash",
@@ -100,16 +96,44 @@ submitBut.addEventListener("click", function (event) {
   finalScoreSec.classList.add("hidden");
   highScoresSec.classList.remove("hidden");
   createHighScoresList();
-  
+
 });
 
-function createHighScoresList()
-  var listItem = document.createElement("li");
-  var listItemArray = []
-  for (i=0; i < 10; I++) {
-    listItemArray[i] = winners[i].push(listItemArray);
+function createHighScoresList() {
+  var winners = JSON.parse(localStorage.getItem("winners")) || [];
+  console.log(winners);
+  console.log(winners[0]);
+  // var listHtml = "";
+  for (i = 0; i < winners.length; i++) {
+    var listItem = document.createElement("div");
+    console.log(winners[i].initials + " " + winners[i].score);
+    listItem = winners[i].initials + " " + winners[i].score + " ";
+    console.log(listItem);
+    listOfHighScoresEl.append(listItem);
     i++;
+    
   }
+
+
+
+  // createList();
+
+
+  // function createList() {
+  //   listHtml += "<li>" + listItem + "</li>";
+
+  //   listOfHighScoresEl.innerHTML = listHTML;
+  //   console.log(listHTML);
+  //   i++;
+  // }
+
+
+
+
+
+
+}
+
 
 
 
@@ -143,9 +167,7 @@ function answers() {
   var answers = questions[currentQuestionIndex].answerChoices;
   console.log(answers);
   for (
-    var i = 0;
-    i < questions[currentQuestionIndex].answerChoices.length;
-    i++
+    var i = 0; i < questions[currentQuestionIndex].answerChoices.length; i++
   ) {
     var answerButton = document.createElement("button");
     answerButton.textContent =
