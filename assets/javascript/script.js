@@ -111,7 +111,11 @@ function createHighScoresList() {
     listItem = winners[i].initials + " " + winners[i].score + " ";
     console.log(listItem);
     listOfHighScoresEl.append(listItem);
-    i++;
+    i++; 
+    
+
+    
+    
   }
 }
 // function to start the time when the user clicks start; timer output displays on the screen; if counter runs out, user is alerted, the clock is reset, and the score becomes 0
