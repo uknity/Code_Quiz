@@ -113,30 +113,7 @@ function createHighScoresList() {
     i++;
     
   }
-
-
-
-  // createList();
-
-
-  // function createList() {
-  //   listHtml += "<li>" + listItem + "</li>";
-
-  //   listOfHighScoresEl.innerHTML = listHTML;
-  //   console.log(listHTML);
-  //   i++;
-  // }
-
-
-
-
-
-
 }
-
-
-
-
 
 var finalScoreEl = document.getElementById("finalScore");
 
@@ -208,7 +185,7 @@ function evaluate(event) {
     messageEl.textContent = "Correct!";
   } else {
     messageEl.textContent = "Wrong!";
-    //take away time
+    counter = counter - 10;
   }
 
   currentQuestionIndex++;
