@@ -116,7 +116,7 @@ button {
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 5%;
+    width: 10%;
     flex-wrap: wrap;
     font-size: 20px;
 }

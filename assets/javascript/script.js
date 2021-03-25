@@ -21,17 +21,29 @@ var finalScoreEl = document.getElementById("finalScore");
 var timerOutputEl = document.getElementById("timerOutput");
 var goBackBtnEl = document.getElementById("goBackBtn");
 var clearScoresButtonEl = document.getElementById("clearScoresButton");
+var listItem1 = document.getElementById("1");
+var listItem2 = document.getElementById("2");
+var listItem3 = document.getElementById("3");
+var listItem4 = document.getElementById("4");
+var listItem5 = document.getElementById("5");
+var listItem6 = document.getElementById("6");
+var listItem7 = document.getElementById("7");
+var listItem8 = document.getElementById("8");
+var listItem9 = document.getElementById("9");
+var listItem10 = document.getElementById("10");
 
 // JavaScript-created variables
 
 // creates an array of objects for the questions and answers
-var questions = [{
+var questions = [
+  {
     question: "Commonly used data types DO NOT include:",
     answerChoices: ["strings", "booleans", "alerts", "numbers"],
     correctAnswer: "alerts",
   },
   {
-    question: "The condition in an if / else statement is enclosed within _____.",
+    question:
+      "The condition in an if / else statement is enclosed within _____.",
     answerChoices: [
       "quotes",
       "curly brackets",
@@ -51,12 +63,14 @@ var questions = [{
     correctAnswer: "all of the above",
   },
   {
-    question: "String values must be enclosed within ____ when being assigned to variables.",
+    question:
+      "String values must be enclosed within ____ when being assigned to variables.",
     answerChoices: ["commas", "curly brackets", "quotes", "parenthesis"],
     correctAnswer: "quotes",
   },
   {
-    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    question:
+      "A very useful tool used during development and debugging for printing content to the debugger is:",
     answerChoices: [
       "JavaScript",
       "terminal / bash",
@@ -73,13 +87,13 @@ var currentQuestionIndex = 0;
 //clear score button clears the high scores on the screen and in local storage
 clearScoresButtonEl.addEventListener("click", function () {
   localStorage.clear();
-  listOfHighScoresEl.innerHTML="";
-})
+  listOfHighScoresEl.innerHTML = "";
+});
 //go back button allows the user to go back to the previous screen
-goBackBtnEl.addEventListener("click", function() {
+goBackBtnEl.addEventListener("click", function () {
   finalScoreSec.classList.remove("hidden");
   highScoresSec.classList.add("hidden");
-})
+});
 
 // submit button allows user to enter initials; they are stored in local storage and added to existing keys
 submitBut.addEventListener("click", function (event) {
@@ -103,21 +117,31 @@ submitBut.addEventListener("click", function (event) {
 // function to create the high scores list from the array of winners & their scores
 function createHighScoresList() {
   var winners = JSON.parse(localStorage.getItem("winners")) || [];
-  console.log(winners);
-  console.log(winners[0]);
   for (i = 0; i < winners.length; i++) {
-    var listItem = document.createElement("div");
-    console.log(winners[i].initials + " " + winners[i].score);
-    listItem = winners[i].initials + " " + winners[i].score + " ";
-    console.log(listItem);
-    listOfHighScoresEl.append(listItem);
-    i++; 
-    
-
-    
+      listItem1.textContent =
+        winners[0].initials + " " + winners[0].score + " ";
+      listItem2.textContent =
+        winners[1].initials + " " + winners[1].score + " ";
+      listItem3.textContent =
+        winners[2].initials + " " + winners[2].score + " ";
+      listItem4.textContent =
+        winners[3].initials + " " + winners[3].score + " ";
+      listItem5.textContent =
+        winners[4].initials + " " + winners[4].score + " ";
+      listItem6.textContent =
+        winners[5].initials + " " + winners[5].score + " ";
+      listItem7.textContent =
+        winners[6].initials + " " + winners[6].score + " ";
+      listItem8.textContent =
+        winners[7].initials + " " + winners[7].score + " ";
+      listItem9.textContent =
+        winners[8].initials + " " + winners[8].score + " ";
+      listItem10.textContent =
+        winners[9].initials + " " + winners[9].score + " ";
     
   }
 }
+
 // function to start the time when the user clicks start; timer output displays on the screen; if counter runs out, user is alerted, the clock is reset, and the score becomes 0
 function startTimer() {
   intervalId = setInterval(function () {
@@ -136,12 +160,14 @@ function startTimer() {
   }, 1000);
 }
 
-//function loops through the questions array and pulls the answer choices for each question and displays them on buttons 
+//function loops through the questions array and pulls the answer choices for each question and displays them on buttons
 function answers() {
   var answers = questions[currentQuestionIndex].answerChoices;
   console.log(answers);
   for (
-    var i = 0; i < questions[currentQuestionIndex].answerChoices.length; i++
+    var i = 0;
+    i < questions[currentQuestionIndex].answerChoices.length;
+    i++
   ) {
     var answerButton = document.createElement("button");
     answerButton.textContent =
@@ -154,7 +180,7 @@ function answers() {
     answerButton.onclick = evaluate;
   }
 }
-//function displays the questions 
+//function displays the questions
 function displayQuestion() {
   console.log(currentQuestionIndex);
 
