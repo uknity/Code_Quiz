@@ -10,24 +10,25 @@
 </head>
 
 <body>
+    <!-- header provides the timer output -->
     <header>
         <div class="timer">Timer: <span id="timerOutput"></span></div>
     </header>
 
     <main id="main">
-        
+        <!-- instructions section and start button displays upon refresh -->
         <section class="instructions">
                 <h1>Coding Quiz Challenge</h1>
                 <div>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds.</div>
                 <button type="button" id="start">Start Quiz</button>
         </section>
-
+        <!-- questions section -->
         <section class="hidden" id="questions-section" >
             <div id="ques"></div>
             <div id="ans"></div>
             <div id="message"></div>       
         </section>
-    
+        <!-- final score page displaying final score and requesting user's initials input -->
         <section class="hidden"  id="finalScorePage">
             <h2>All done!</h2>
             <div id="finalScore">Your final score is 
@@ -36,14 +37,14 @@
             <input type="text" id="initials"><button type="submit" id="submit">Submit!</button>
 
         </section>
-
+        <!-- high scores section displaying high scores -->
         <section class="hidden"  id="highScores">
             <div id="subHead">High Scores</div>
             <div id="highScoresInitials"></div>
             <div id="listOfHighScores">
                
             </div>
-            <button>Go Back</button><button>Clear Highscores</button>
+            <button id="goBackBtn">Go Back</button><button id="clearScoresButton">Clear Highscores</button>
 
         </section>
 

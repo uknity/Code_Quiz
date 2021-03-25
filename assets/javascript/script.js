@@ -1,36 +1,30 @@
+// pulls in elements from HTML and creates a variable in JS
 var mainSec = document.querySelector("main");
-
 var instructionsSec = document.querySelector(".instructions");
-
 var questionsSec = document.querySelector("#questions-section");
-
 var quesEl = document.querySelector("#ques");
 var ansEl = document.querySelector("#ans");
-
 var startBtn = document.querySelector("#start");
-
 var quizEl = document.querySelector("#quiz");
-
 var pagesEl = document.querySelector(".pages");
-
 var messageEl = document.querySelector("#message");
 var finalScoreSec = document.getElementById("finalScorePage");
-
 var initialsInput = document.getElementById("initials");
-
 var highScoresSec = document.getElementById("highScores");
-
 var highScoresInitialsEl = document.querySelector(".highScoresInitials");
-
 var submitBut = document.getElementById("submit");
-
 var answerElement = document.getElementById("ans");
 var questionElement = document.getElementById("ques");
-
 var listOfHighScoresEl = document.getElementById("listOfHighScores");
+var initialsInput = document.getElementById("initials");
+var finalScoreEl = document.getElementById("finalScore");
+var timerOutputEl = document.getElementById("timerOutput");
+var goBackBtnEl = document.getElementById("goBackBtn");
+var clearScoresButtonEl = document.getElementById("clearScoresButton");
 
+// JavaScript-created variables
 
-
+// creates an array of objects for the questions and answers
 var questions = [{
     question: "Commonly used data types DO NOT include:",
     answerChoices: ["strings", "booleans", "alerts", "numbers"],
@@ -72,11 +66,22 @@ var questions = [{
     correctAnswer: "console log",
   },
 ];
+var counter = 75;
+var intervalId;
+var currentQuestionIndex = 0;
 
-var initialsInput = document.getElementById("initials");
+//clear score button clears the high scores on the screen and in local storage
+clearScoresButtonEl.addEventListener("click", function () {
+  localStorage.clear();
+  listOfHighScoresEl.innerHTML="";
+})
+//go back button allows the user to go back to the previous screen
+goBackBtnEl.addEventListener("click", function() {
+  finalScoreSec.classList.remove("hidden");
+  highScoresSec.classList.add("hidden");
+})
 
-
-
+// submit button allows user to enter initials; they are stored in local storage and added to existing keys
 submitBut.addEventListener("click", function (event) {
   var winners = JSON.parse(localStorage.getItem("winners")) || [];
   event.preventDefault();
@@ -86,24 +91,20 @@ submitBut.addEventListener("click", function (event) {
   if (ii === "") {
     alert("Initials cannot be blank");
   }
-
   winners.push({
     initials: ii,
     score: counter,
   });
-
   localStorage.setItem("winners", JSON.stringify(winners));
   finalScoreSec.classList.add("hidden");
   highScoresSec.classList.remove("hidden");
   createHighScoresList();
-
 });
-
+// function to create the high scores list from the array of winners & their scores
 function createHighScoresList() {
   var winners = JSON.parse(localStorage.getItem("winners")) || [];
   console.log(winners);
   console.log(winners[0]);
-  // var listHtml = "";
   for (i = 0; i < winners.length; i++) {
     var listItem = document.createElement("div");
     console.log(winners[i].initials + " " + winners[i].score);
@@ -111,17 +112,9 @@ function createHighScoresList() {
     console.log(listItem);
     listOfHighScoresEl.append(listItem);
     i++;
-    
   }
 }
-
-var finalScoreEl = document.getElementById("finalScore");
-
-var timerOutputEl = document.getElementById("timerOutput");
-
-var counter = 75;
-var intervalId;
-
+// function to start the time when the user clicks start; timer output displays on the screen; if counter runs out, user is alerted, the clock is reset, and the score becomes 0
 function startTimer() {
   intervalId = setInterval(function () {
     console.log(counter);
@@ -138,8 +131,8 @@ function startTimer() {
     }
   }, 1000);
 }
-var currentQuestionIndex = 0;
 
+//function loops through the questions array and pulls the answer choices for each question and displays them on buttons 
 function answers() {
   var answers = questions[currentQuestionIndex].answerChoices;
   console.log(answers);
@@ -157,7 +150,7 @@ function answers() {
     answerButton.onclick = evaluate;
   }
 }
-
+//function displays the questions 
 function displayQuestion() {
   console.log(currentQuestionIndex);
 
@@ -177,7 +170,7 @@ function displayQuestion() {
     answers();
   }
 }
-
+//function evaluates whether the user clicked the correct or incorrect button and provides a message.  If user gets the wrong answer, the counter subtracts 10 seconds.
 function evaluate(event) {
   console.log(event.target.value);
 
@@ -196,26 +189,12 @@ function evaluate(event) {
 
   advanceButton.addEventListener("click", displayQuestion);
 }
-
-// function evalEnd() {
-//   console.log(currentQuestionIndex);
-
-//   // if (currentQuestionIndex = 4) {
-//     // quesEl.classList.add("hidden");
-//     // ansEl.classList.add("hidden");
-//     // finalScorePageEl.classlist.remove("hidden");
-//     // finalScoreOutputEl.textContent = counter;
-//   // }
-//   // else {
-//     displayQuestion;
-//   // }
-// }
-
+//function starts the quiz, hiding the instructions sections and calling the displayQuestion function
 function startQuiz() {
   startTimer();
   instructionsSec.classList.add("hidden");
   questionsSec.classList.remove("hidden");
   displayQuestion();
 }
-
+//start button activates the game
 startBtn.addEventListener("click", startQuiz);
